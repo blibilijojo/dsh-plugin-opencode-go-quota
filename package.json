@@ -1,0 +1,52 @@
+{
+  "name": "@local/opencode-go-quota",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shows the three OpenCode Go quota windows (5-hour, weekly, monthly) in the DeepSeek Harness Web UI.",
+  "license": "MIT",
+  "author": "blibilijojo",
+  "homepage": "https://github.com/blibilijojo/dsh-plugin-opencode-go-quota",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blibilijojo/dsh-plugin-opencode-go-quota.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "opencode",
+    "opencode-go",
+    "quota"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "icon": "./icon.svg",
+  "meta": {
+    "title": "OpenCode Go 额度",
+    "description": "在输入框下方显示 OpenCode Go 的三个额度：5 小时滚动、本周、本月。"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
